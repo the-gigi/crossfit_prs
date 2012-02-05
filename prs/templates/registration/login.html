@@ -1,0 +1,26 @@
+{% extends 'base_form.html' %}
+{% block pagetitle %}Login{% endblock %}
+{% block title %}Login{% endblock %}
+{% block primary %}
+    {% if form.errors %}
+    <p class="error">Sorry, that's not a valid username or password</p>
+    {% endif %}
+    <form action="" method="post">{% csrf_token %}
+        <div>
+            <label for="username">User name:</label>
+            <input type="text" name="username" value="" id="username">
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" value="" id="password">
+        </div>
+        <div>
+            <input type="submit" class="subit" value="login" />
+            <input type="hidden" name="next" value="{{ next|escape }}" />
+        </div>
+    </form>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block pagetitle %}Crossfit PRs - Home{% endblock %}
+{% block title %}<h1>Crossfit PRs</h1>{% endblock %}
+{% block primary %}
+<p>Welcome to Crossfit PR</p>
+<p>The web application that keeps you strong and healthy. You can record your PRs,
+sort them and filter them. Check the about page for further details.</p>
+
+<div class='big_button_container'>
+    <a href='/prs/new_account'><button class='clean-gray'>Create New Account</button></a>
+    <a href='/registration/login?next={{ request.path }}'><button class='clean-gray'>Log in</button></a>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block pagetitle %}All results{% endblock %}
+{% block title %}Results{% endblock %}
+{% block primary %}
+<ul>
+{% for s in scores %}
+    <li class="score"><a href="/prs/{{ s.activity.id }}/history/">{{ s.activity.name }} : {{s.result}}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}

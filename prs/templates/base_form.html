@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Crossfit PRs - {%block pagetitle %}{% endblock %}</title>
+    <!--[if IE]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" />
+</head>
+<body>
+    <div id="header">
+        <div id="headerText">Crossfit PRs</div>
+    </div>
+    <div id="content" class="center">
+        <h1>Crossfit PRs - {% block title %}Login{% endblock %}</h1>
+        {% block primary %}
+        {% endblock %}
+    </div>
+</body>
+</html>
+
+

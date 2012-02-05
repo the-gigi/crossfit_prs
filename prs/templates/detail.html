@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block pagetitle %}Crossfit PRs - {{score.activity_name}}{% endblock %}
+{% block title %}<h1>{{score.activity_name}}</h1>{% endblock %}
+{% block primary %}
+<div id="weight">
+  <span>Weight</span>
+  <span>{{score.weight}}</span>
+</div>
+
+<div id="reps">
+  <span>Reps</span>
+  <span>{{score.reps}}</span>
+</div>
+
+<div id="time">
+  <span>Time</span>
+  <span>{{score.time}}</span>
+</div>
+
+{% endblock %}
+
+

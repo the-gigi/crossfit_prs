@@ -1,0 +1,34 @@
+style forms
+
+format data as tables
+style tables
+add sorting
+add pagination
+
+add activity creation form
+add score entry form
+
+base layout
+   navigation on top
+   add activity/score on the left
+
+add filter by tag (substring)
+add free text search
+    
+ajax pagination and sorting
+
+add following feature (follow someone else's WODs)
+
+add sharing (control who can follow you)
+
+add custom activities (per user in addition to global list of activities)
+
+integrate import from logsitall
+
+
+use less and/or scss and/or haml
+
+add REST API (serve JSON)
+
+write REST Python client
+write Android app
