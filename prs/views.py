@@ -10,6 +10,7 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 
+import json
 import operator
 
 def home(request):
@@ -135,6 +136,17 @@ def create_activity(request):
 @login_required
 def create_score(request):
     form = ScoreForm(request.POST or None)
+    
+    # Dynamically add a JSON dict which maps activity name to activity type
+    # This will allow create_score.js to display the relevant fields on
+    # the form when a particular activity is selected. Note the 'activities'
+    # field is not defined in the ScoreForm and is added on the fly.
+    activities = Activity.objects.all()
+    form.activities = {}
+    for a in activities:
+        form.activities[a.name] = a.scoreType
+    
+    form.activities = json.dumps(form.activities);
     if not form.is_valid():
         return render_to_response('create_score.html',
                                   dict(form=form),

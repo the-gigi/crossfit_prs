@@ -2,7 +2,7 @@
 {% block pagetitle %}Create New Activity{% endblock %}
 {% block title %}<h1>Create New Activity</h1>{% endblock %}
 {% block primary %}
-<form method="POST" action="">{% csrf_token %}
+<form id="new_activity_form" method="POST" action="">{% csrf_token %}
   <ul>
     {{ form.as_ul }}
   </ul>

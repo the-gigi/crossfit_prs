@@ -1,4 +1,4 @@
-# Django settings for dj_site project.
+# Django settings for crossfit_prs project.
 import os
 
 DEBUG = True
@@ -104,7 +104,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'dj_site.urls'
+ROOT_URLCONF = 'crossfit_prs.urls'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".

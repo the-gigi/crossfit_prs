@@ -22,6 +22,11 @@ li {
     border: solid 1px green;
 }
 
+.hide {
+    display: none;
+}
+
+
 #header {
     height: 200px;
     width: 100%;
@@ -130,7 +135,7 @@ footer {
    B U T T O N
 
 ******************************/
-button.clean-gray {
+button.clean-gray, input.submit .clean-gray {
     background-color: #eeeeee;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #eeeeee), color-stop(100%, #cccccc));
     background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
@@ -154,7 +159,7 @@ button.clean-gray {
     width: 150px;
 }
 
-button.clean-gray:hover {
+.clean-gray:hover {
     background-color: #dddddd;
     background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dddddd), color-stop(100%, #bbbbbb));
     background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
