@@ -18,11 +18,11 @@ http://www.kryogenix.org/code/browser/sorttable/
         <tr>
             <th>Date</th>
             <th>Activity</th>
-            <th class="sorttable_nosort">Score</th>            
+            <th class="sorttable_nosort">Score</th>
         </tr>
     </thead>
     <tbody>
-{% for s in scores %}    
+{% for s in scores %}
     <tr class="{% cycle 'even' 'odd'%}">
         <td sorttable_customkey={{ s.when|date:"c" }}>{{ s.when }}</td>
         <td><a href="/prs/{{ s.activity.id }}/history/">{{ s.activity.name }}</td>
