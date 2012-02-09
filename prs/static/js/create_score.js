@@ -21,11 +21,11 @@ $(document).ready(function(){
         break;
       } 
       case 'Reps':{
-        show($('#id_reps_wrapper'));
+        show($('#id_reps_wrapper'), 'table');
         break;
       }
       case 'Time':{
-        show($('#id_time_wrapper'));
+        show($('#id_time_wrapper'), 'table');
         break;
       }
       default:{

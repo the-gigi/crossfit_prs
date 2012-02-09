@@ -1,0 +1,31 @@
+
+
+#id_activity,
+#id_when,
+#id_reps,
+#id_time {
+    display: table-cell;
+    width: 100%;
+}
+
+/* Can't position these elements like the labels ??? */
+#id_weight,
+#id_unit {
+    width: 115px;
+    margin-right: 20px;
+    float: left;
+}
+
+#weight_row {
+    width: 300px;
+    clear: both;
+}
+
+.weight_label, .weight_label_first {
+    width: 115px;
+    float: left;    
+}
+
+.weight_label_first {
+    margin-right: 20px;
+}

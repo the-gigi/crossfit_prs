@@ -1,8 +1,10 @@
 {% extends 'base_form.html' %}
 {% block pagetitle %}Add New Score{% endblock %}
 {% block js %}create_score.js{% endblock %}
+{% block css %}create_score.css{% endblock %}
 {% block title %}<h1>Add New Score</h1>{% endblock %}
 {% block primary %}
+
 
 <form id="new_score_form" method="POST" action="">{% csrf_token %}
     <input id="id_activities" type="hidden" value="{{ form.activities }} "/>
@@ -17,15 +19,19 @@
         <label for="id_when">Date</label>
         {{ form.when }}
     </div>
+
     <div id="id_weight_wrapper" class="fieldWrapper hide">
-        {{ form.weight.errors }}
-        <label for="id_weight">Weight</label>
-        {{ form.weight }}
-        
-        {{ form.unit.errors }}
-        <label for="id_unit">Unit</label>
-        {{ form.unit }}        
+        <div class="row">
+          {{ form.weight.errors }}
+          {{ form.unit.errors }}
+        </div>
+        <div>
+          <label class="weight_label_first" for="id_weight">Weight</label>
+          <label class="weight_label" for="id_unit">Unit</label>
+        </div>
+        <div id="weight_row">{{ form.weight }} {{ form.unit }}</div>
     </div>    
+
     <div id="id_reps_wrapper" class="fieldWrapper hide">
         {{ form.reps.errors }}
         <label for="id_reps">Reps</label>
@@ -37,30 +43,6 @@
         {{ form.time }}
     </div>
     
-    <button type="submit" class="clean-gray">Create Activity</button>
+    <button type="submit" class="clean-gray">Record Score</button>
 </form>
-
-
-  
-<!--form id="new_score_form2" method="POST" action="">{% csrf_token %}
-
-    {% for field in form %}
-        <div class="fieldWrapper">
-            {{ field.errors }}
-            {{ field.label_tag }}: {{ field }}
-        </div>
-    {% endfor %}
-    <button type="submit" value="Create Activity" />
-</form-->  
-
-
-
-  
-  
-<!--form id="new_score_form" method="POST" action="">{% csrf_token %}
-  <ul>
-    {{ form.as_ul }}
-  </ul>
-  <input type="submit" value="Create" />
-</form-->
 {% endblock %}

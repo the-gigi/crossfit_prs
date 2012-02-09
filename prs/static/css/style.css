@@ -25,6 +25,74 @@ li {
 .hide {
     display: none;
 }
+    
+.fieldWrapper {
+    width: 100%;
+}
+
+.row {
+    width: 100%;
+    display: table-row;
+    padding-bottom: 10px;
+}
+
+.relative {
+    position: relative;
+    padding-bottom: 50px;
+}
+.cell {
+    display: table-cell;
+}
+
+.full-width {
+    width: 100%;
+}
+
+.half-width {
+    width: 50%;
+}
+
+#results_table {
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+#results_table caption {
+    padding: 10px 10px 10px 10px;
+    font-size: 20pt;
+    font-weight: bold;
+}
+
+#results_table thead th {
+    cursor: pointer;
+}
+
+#results_table thead,
+#results_table thead th,
+#results_table td {
+    padding: 10px 10px 10px 10px;
+}
+
+#results_table thead th.sorttable_nosort {
+    cursor: default;
+}
+
+#results_table thead tr {
+    color: #777777;	
+}
+
+#results_table tbody tr {
+    color: maroon;
+    border: dotted 1px black;
+}
+
+.odd {
+    background-color: #dddddd;
+}
+
+.even {
+    background-color: #bbbbbb;
+}
 
 
 #header {
@@ -193,6 +261,7 @@ form {
     width: 250px;
     padding: 20px;
     border: 1px solid maroon;
+    margin: 0 auto;
  
     /*** Adding in CSS3 ***/
  
@@ -220,17 +289,20 @@ label {
     list-style-type: none;
     color: maroon;
     text-shadow: black 1px 1px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
     font-weight: bold;
     letter-spacing: 1px;
     text-transform: uppercase;
     display: block;
 }
 
+select {
+    margin-bottom: 10px;    
+}
+
 input {
     width: 230px;
     background: #c9c9c9;
-    padding: 6px;
     margin-bottom: 10px;
     border-top: 1px solid #eeeeee;
     border-left: 0px;
