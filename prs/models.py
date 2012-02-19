@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from datetime import date
 
 # Weight units
 UNITS = (
@@ -56,7 +57,7 @@ class Tag(models.Model):
 class Score(models.Model, ComparableMixin):
     activity = models.ForeignKey(Activity)
     user = models.ForeignKey(User)
-    when = models.DateField()
+    when = models.DateField(default=date.today, blank=False)
     weight = models.IntegerField(null=True, blank=True)
     unit = models.CharField(max_length=4,
                             choices=UNITS,
@@ -106,4 +107,3 @@ class Score(models.Model, ComparableMixin):
         return name + ' - ' + self.result
 
     date_hierarchy = ['when']
-

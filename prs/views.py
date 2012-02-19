@@ -25,7 +25,7 @@ def new_account(request):
         if 'next' in request.POST:
             next = request.POST['next']
         else:
-            next = reverse('prs.views.home')            
+            next = reverse('prs.views.home')
         return HttpResponseRedirect(next)
     else:
         form = UserCreationForm()
@@ -35,11 +35,11 @@ def new_account(request):
 
 def about(request):
     """Provide general inormation about the application
-    
+
     Doesn't require login
     """
-    
-    return render_to_response('about.html', 
+
+    return render_to_response('about.html',
                               context_instance=RequestContext(request))
 
 @login_required
@@ -106,10 +106,10 @@ def all_prs(request):
                               context_instance=RequestContext(request))
 
 @login_required
-def create_activity(request):
+def new_activity(request):
     form = ActivityForm(request.POST or None)
     if not form.is_valid():
-        return render_to_response('create_activity.html',
+        return render_to_response('new_activity.html',
                                   dict(form=form),
                                   context_instance=RequestContext(request))
 
@@ -134,21 +134,21 @@ def create_activity(request):
     return HttpResponseRedirect(next)
 
 @login_required
-def create_score(request):
+def new_score(request):
     form = ScoreForm(request.POST or None)
-    
+
     # Dynamically add a JSON dict which maps activity name to activity type
-    # This will allow create_score.js to display the relevant fields on
+    # This will allow new_score.js to display the relevant fields on
     # the form when a particular activity is selected. Note the 'activities'
     # field is not defined in the ScoreForm and is added on the fly.
     activities = Activity.objects.all()
     form.activities = {}
     for a in activities:
         form.activities[a.name] = a.scoreType
-    
+
     form.activities = json.dumps(form.activities);
     if not form.is_valid():
-        return render_to_response('create_score.html',
+        return render_to_response('new_score.html',
                                   dict(form=form),
                                   context_instance=RequestContext(request))
 
