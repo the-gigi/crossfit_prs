@@ -2,7 +2,14 @@ body {
     background-color: #dddddd;
     margin-left: auto;
     margin-right: auto;
-    font-family: arial, sans-serif;    
+    font-family: sans-serif,"Trebuchet MS",Verdana,Helvetica,Arial;
+    font-size: 17px;
+    line-height: 24px;
+}
+
+
+h1 {
+    font-size: 26px;
 }
 
 a {
@@ -25,7 +32,7 @@ li {
 .hide {
     display: none;
 }
-    
+
 .fieldWrapper {
     width: 100%;
 }
@@ -78,7 +85,7 @@ li {
 }
 
 #results_table thead tr {
-    color: #777777;	
+    color: #777777;
 }
 
 #results_table tbody tr {
@@ -168,7 +175,7 @@ li {
 .center {
     margin: 0px auto -1px auto;
     margin-left: auto;
-    margin-right: auto;	
+    margin-right: auto;
 }
 
 #content {
@@ -182,12 +189,25 @@ li {
 
 #content h1 {
 	text-align: center;
+    padding-top: 20px;
+    padding-top: 20px;
+    color: maroon;
+    font-weight: bold;
 }
 .score a {
     color: rgb(128, 0, 0);
     padding: 5px 5px 5px 5px;
     text-decoration: none;
 }
+
+#main {
+    padding-top: 10px;
+}
+
+#big_button_container {
+    padding: 10px;
+}
+
 
 .score a:hover {
     font-weight: bold;
@@ -262,16 +282,16 @@ form {
     padding: 20px;
     border: 1px solid maroon;
     margin: 0 auto;
- 
+
     /*** Adding in CSS3 ***/
- 
+
     /*** Rounded Corners ***/
     -moz-border-radius: 20px;
     -webkit-border-radius: 20px;
     -o-border-radius: 20px;
     -ms-border-radius: 20px;
     border-radius: 20px;
- 
+
     /*** Background Gradient - 2 declarations one for Firefox and one for Webkit ***/
     background: -moz-linear-gradient(19% 75% 90deg, rgb(128, 0, 0), rgb(166, 0, 0)) repeat scroll 0% 0% transparent;
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#963AD6), to(#4E0085));
@@ -297,7 +317,7 @@ label {
 }
 
 select {
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
 }
 
 input {
@@ -308,13 +328,13 @@ input {
     border-left: 0px;
     border-right: 0px;
     border-bottom: 0px;
- 
+
     /*** Adding CSS3 ***/
- 
+
     /*** Transition Selectors - What properties to animate and how long ***/
     -webkit-transition-property: -webkit-box-shadow, background;
     -webkit-transition-duration: 0.25s;
- 
+
     /*** Adding a small shadow ***/
     -moz-box-shadow: 0px 0px 2px #000;
     -webkit-box-shadow: 0px 0px 2px #000;
@@ -335,7 +355,7 @@ input.submit {
     text-shadow: #000 1px 1px;
     border-top: 1px solid #ad64e0;
     margin-top: 10px;
- 
+
     /*** Adding CSS3 Gradients ***/
     background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#963AD6), to(#781bb9));
     background: -moz-linear-gradient(19% 75% 90deg,#781bb9, #963AD6);

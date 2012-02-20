@@ -4,12 +4,14 @@
         <title>Crossfit PRs - {%block pagetitle %}{% endblock %}</title>
         <link rel="stylesheet" href="{{ STATIC_URL }}css/reset.css" type="text/css" />
         <link rel="stylesheet" href="{{ STATIC_URL }}css/style.css" type="text/css" />
+        <!--link rel="stylesheet" href="{{ STATIC_URL }}css/{% block css %}{% endblock %}" type="text/css" /-->
         <!--[if IE]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
         <script src="{{ STATIC_URL }}js/common.js"></script>
         <script src="{{ STATIC_URL }}js/sorttable.js"></script>
+        <!--script src="{{ STATIC_URL }}js/{% block js %}{% endblock %}"></script-->
     </head>
     <body>
         <div id="header">
@@ -29,14 +31,16 @@
                     <li><a href="{% url prs.views.new_activity  %}">Add Activitiy</a></li>
                     <li><a href="{% url prs.views.new_score %}">Add Score</a></li>
 
-                    <li><a href="{% url prs.views.all %}">All</a></li>
+                    <li><a href="{% url prs.views.all %}?offset=0&limit=10">All</a></li>
                     <li><a href="{% url prs.views.all_prs %}">PRs</a></li>
                     <li><a href="{% url prs.views.about %}">About</a></li>
                 </ul>
             </nav>
 
             <h1>{% block title %}{% endblock %}</h1>
+            <div id="main">
             {% block primary %}{% endblock %}
+            </div>
         </div>
     </body>
 </html>

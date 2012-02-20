@@ -5,6 +5,8 @@ style tables
 add sorting
 add pagination
 
+deploy on the web / GAE?
+
 add activity creation form
 add score entry form
 
@@ -14,7 +16,7 @@ base layout
 
 add filter by tag (substring)
 add free text search
-    
+
 ajax pagination and sorting
 
 add following feature (follow someone else's WODs)

@@ -45,10 +45,35 @@ def about(request):
 @login_required
 def all(request):
     # The '-when' means order by the 'when' field in descending order
-    scores = Score.objects.filter(user=request.user.id).order_by('-when')
-    scores = sorted(scores, key=lambda s: s.activity.name)
-    return render_to_response('index.html',
-                              dict(scores=scores),
+    order_by = request.GET.get('order_by', '-when')
+    scores = Score.objects.filter(user=request.user.id).order_by(order_by)
+    offset = request.GET.get('offset', None)
+    limit =  request.GET.get('limit', None)
+    prev_link = None
+    next_link = None
+
+    #from dbgp.client import brk; brk(port=9019)
+    if offset and limit:
+        count = scores.count()
+        offset = int(offset)
+        limit = int(limit)
+        chunk = limit - offset
+        scores = scores[offset:limit]
+
+        link_mask = '/prs/all/?offset=%d&limit=%d&order_by=' + order_by
+        if offset + limit < count - 1:
+            next_offset = offset + chunk
+            next_link = link_mask % (next_offset, next_offset + chunk)
+
+        if offset > 0:
+            prev_offset = max(offset - chunk, 0)
+            prev_link = link_mask % (prev_offset, prev_offset + chunk)
+
+    #scores = sorted(scores, key=lambda s: s.activity.name)
+    return render_to_response('all.html',
+                              dict(scores=scores,
+                                   prev_link=prev_link,
+                                   next_link=next_link),
                               context_instance=RequestContext(request))
 
 @login_required
@@ -62,7 +87,7 @@ def detail(request, score_id):
 def history(request, activity_id):
     # The '-when' means order by the 'when' field in descending order
     scores = Score.objects.filter(user=request.user.id, activity__id=activity_id).order_by('-when')
-    return render_to_response('index.html',
+    return render_to_response('all.html',
                               dict(scores=scores),
                               context_instance=RequestContext(request))
 

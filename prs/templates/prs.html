@@ -1,10 +1,26 @@
 {% extends 'base.html' %}
 {% block pagetitle %}All PRs{% endblock %}
-{% block title %}PRs{% endblock %}
+
 {% block primary %}
-<ul>
+
+<table id="results_table" class="sortable">
+    <caption>All PRs</caption>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Activity</th>
+            <th class="sorttable_nosort">Score</th>
+        </tr>
+    </thead>
+    <tbody>
 {% for pr in prs %}
-    <li class="score"><a href="/prs/{{ pr.id }}/">{{ pr.activity.name }} : {{pr.result}}</a></li>
+    <tr class="{% cycle 'even' 'odd'%}">
+        <td sorttable_customkey={{ s.when|date:"c" }}>{{ pr.when }}</td>
+        <td><a href="/prs/{{ pr.id }}/">{{ pr.activity.name }}</td>
+        <td>{{ pr.result }}</td>
+    </tr>
 {% endfor %}
-</ul>
+    </tbody>
+</table>
+
 {% endblock %}

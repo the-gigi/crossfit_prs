@@ -32,4 +32,20 @@ http://www.kryogenix.org/code/browser/sorttable/
     </tbody>
 </table>
 
+<div id="pagination">
+    <span>
+        {% if prev_link %}
+        <a href={{ prev_link }}>Prev</a>
+        {% else %}
+            Prev
+        {% endif %}
+    </span>
+    <span>
+        {% if next_link %}
+        <a href={{ next_link }}>Next</a>
+        {% else %}
+            Next
+        {% endif %}
+    </span>
+</div>
 {% endblock %}
