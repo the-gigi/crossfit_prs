@@ -1,8 +1,9 @@
 # Django settings for crossfit_prs project.
 import os
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+# -- in local_settings.py
+#DEBUG = True
+#TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Gigi Sayfan', 'gigi-s@bigfoot.com'),
@@ -12,21 +13,13 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'prs',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
+        'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': os.path.abspath('prs.db'), # Or path to database file if using sqlite3.
+        'USER': '',                      # Not used with sqlite3.
+        'PASSWORD': '',                  # Not used with sqlite3.
+        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     },
-    #'sqlite': {
-    #    'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-    #    'NAME': os.path.abspath('prs.db'), # Or path to database file if using sqlite3.
-    #    'USER': '',                      # Not used with sqlite3.
-    #    'PASSWORD': '',                  # Not used with sqlite3.
-    #    'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
-    #    'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
-    #}
 }
 
 # Local time zone for this installation. Choices can be found here:
@@ -94,8 +87,9 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+# -- in local_settings.py
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'cud&xip%zopuzvc1cooo-luhe(c0r6i%lzc2(#0k6d&mb(2g-b'
+SECRET_KEY = ''
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -128,14 +122,12 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_extensions',
 
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
     'prs',
-    'south',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -169,3 +161,9 @@ TEMPLATE_CONTEXT_PROCESSORS = \
     "django.core.context_processors.static",
     "django.core.context_processors.request",
     "django.contrib.messages.context_processors.messages")
+
+try:
+    LOCAL_NAMES
+except NameError:
+    from local_settings import *
+    

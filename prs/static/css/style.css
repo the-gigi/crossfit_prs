@@ -294,7 +294,7 @@ form {
 
     /*** Background Gradient - 2 declarations one for Firefox and one for Webkit ***/
     background: -moz-linear-gradient(19% 75% 90deg, rgb(128, 0, 0), rgb(166, 0, 0)) repeat scroll 0% 0% transparent;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#963AD6), to(#4E0085));
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#80000), to(a60000#));
     background-image: -o-linear-gradient(90deg,rgb(128,0,0) 190% ,rgb(166,0,0) 75%);
     /*** Shadow behind the box ***/
     -moz-box-shadow:0px -5px 300px #270644;
